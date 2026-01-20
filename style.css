@@ -362,6 +362,102 @@ header {
     grid-template-columns: 1fr;
   }
 }
+/* ===== CONTACT (PRO) ===== */
+.contact-box {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.contact-links {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.contact-item {
+  text-decoration: none;
+  color: white;
+  padding: 16px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 4px;
+  transition: transform 0.22s ease, background 0.22s ease, border 0.22s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-item::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(circle at top left, rgba(77,163,255,0.35), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.22s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-4px);
+  background: rgba(77, 163, 255, 0.10);
+  border: 1px solid rgba(77, 163, 255, 0.40);
+}
+
+.contact-item:hover::before {
+  opacity: 1;
+}
+
+.contact-item .icon {
+  grid-row: 1 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(77, 163, 255, 0.15);
+  border: 1px solid rgba(77, 163, 255, 0.30);
+  font-size: 18px;
+  z-index: 1;
+}
+
+.contact-item .text {
+  font-weight: 800;
+  font-size: 16px;
+  z-index: 1;
+}
+
+.contact-item .sub {
+  font-size: 13px;
+  opacity: 0.85;
+  z-index: 1;
+}
+
+/* CV special */
+.contact-item.cv {
+  background: rgba(77, 163, 255, 0.18);
+  border: 1px solid rgba(77, 163, 255, 0.45);
+}
+
+.contact-item.cv .icon {
+  background: rgba(77, 163, 255, 0.35);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .contact-links {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 
